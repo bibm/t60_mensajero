@@ -4,17 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{577C68A0-95F0-4B75-9B38-DB12BA5C8D03}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>MensajeroApp</RootNamespace>
-    <AssemblyName>MensajeroApp</AssemblyName>
+    <ProjectGuid>{0765704C-3C1E-439B-8CC7-0874AB01805E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SocketUtils</RootNamespace>
+    <AssemblyName>SocketUtils</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -34,7 +32,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -44,25 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Partials\Program.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="ClienteSocket.cs" />
+    <Compile Include="DTO\ServerSocket.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Threads\ClientThread.cs" />
-    <Compile Include="Threads\ServerThread.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\MensajeModel\MensajeModel.csproj">
-      <Project>{5C46CF73-5CF3-4874-82D4-3031CF8FC19A}</Project>
-      <Name>MensajeModel</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SocketUtils\SocketUtils.csproj">
-      <Project>{0765704c-3c1e-439b-8cc7-0874ab01805e}</Project>
-      <Name>SocketUtils</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
